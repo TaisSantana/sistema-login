@@ -20,11 +20,13 @@ input[type= submit]{
 
 body{
   background-image: url(../img/coronavirus.jpg);
+  background-color: #012535;
   background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
-  height: 100%;
+  height: 500px;
   margin: 0 auto;
+  overflow: hidden;
   }
 
 
@@ -94,6 +96,11 @@ table{
   margin: 30px auto;
  
 }
+
+h1{
+  color:white;
+  text-align: center;
+}
 tr{
   line-height: 30px;
 }
@@ -103,5 +110,8 @@ td{
 tr#titulo{
   font-weight: bold;
   background-color: rgba(0,0,0,.6);
-  color: white
+  color: white;
+}
+tr#infos td{
+  color: white;
 }

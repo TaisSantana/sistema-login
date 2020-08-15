@@ -34,7 +34,7 @@ if(isset($_POST['email']))
         if($u->logar($email,$senha))
         {
             echo "<script>location.href='AreaPrivada.php'</script>";
-            //header('Location: AreaPrivada.php');
+           
         }
         else
         {

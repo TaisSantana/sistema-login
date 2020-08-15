@@ -79,27 +79,28 @@ Class User
         return $res;
     }
 
+
     public function alterar($id_usuario,$nome, $telefone, $email, $senha)
     {
         global $pdo;
-        $sql = $pdo->prepare("UPDATE usuario SET nome = :n,telefone=:t,email=:e,senha=:s) WHERE id_usuario = :id");
-            $sql->bindValue(":id",$id_usuario);
-            $sql->bindValue(":n",$nome);
-            $sql->bindValue(":t",$telefone);
-            $sql->bindValue(":e",$email);
-            //criptografa senha
-            $sql->bindValue(":s",md5($senha));
-            $sql->execute();
-            return true;
-        
-    }
-    
+       
+        $sql = $pdo->prepare("UPDATE usuario SET nome = :n,telefone=:t,email=:e,senha=:s WHERE id_usuario = :id");
+        $sql->bindValue(":id",$id_usuario);
+        $sql->bindValue(":n",$nome);
+        $sql->bindValue(":t",$telefone);
+        $sql->bindValue(":e",$email);
+        //criptografa senha
+        $sql->bindValue(":s",md5($senha));
+        return $sql->execute();
+        }
+            
 
     public function deletar($id_usuario)
     {
+        global $pdo;
         $sql = $pdo->prepare("DELETE FROM usuario WHERE id_usuario = :id");
         $sql->bindValue(":id",$id_usuario);
-        $sql->execute();
+        return $sql->execute();
     }
 }
 ?>

@@ -4,24 +4,11 @@
     if(!isset($_SESSION['id_usuario']))
     {
         header("location: index.php");
-        //só executa esse bloco, por causa do exit
         exit;
     }
     else
     {
-        /*$id_user = addslashes($_SESSION['id_usuario']); 
-        $nome = addslashes($_SESSION['nome']);
-        $telefone= addslashes($_SESSION['telefone']);
-        $email = addslashes($_SESSION['email']);
-        $sql_code = "SELECT * FROM usuario WHERE id_usuario = $_SESSION['id_usuario']";
-        $sql_query = $mysqli->query($sql_code) or die($mysqli->error);
-        $linha = $sql_query->fetch_assoc();
-        */
-        
-    }
 ?>
-
-
 <html>
 <head>
     <title>Pagina do Usuario</title>
@@ -30,9 +17,10 @@
 
 </head>
 <body>
-<section id =Tabela-dados>
-    <h1>SEJA BEM VINDO(A)!</h1>
+<div id =Tabela-dados>
+<h1>SEJA BEM VINDO(A)!</h1>
     <table>
+    
         <tr id=titulo>
             <td>Nome</td>
             <td>Telefone</td>
@@ -43,18 +31,20 @@
                 <a href="sair.php">Sair</a>
             </td>
         </tr>
-        <tr>
+        <tr id=infos>
             <td><?php echo "{$_SESSION['nome']}" ?></td>
             <td><?php echo "{$_SESSION['telefone']}" ?></td>
             <td><?php echo "{$_SESSION['email']}" ?></td>
         </tr>
-        <section>
+</div>
 
 
 </body>
 </html>
 
-
+<?php
+    }
+?>
 
 
 

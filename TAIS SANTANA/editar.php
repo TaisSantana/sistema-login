@@ -20,8 +20,8 @@
         <h1> Alterar </h1>
         <input type="text" name ="nome" placeholder="Nome" maxlength= "70" required value = "<?php echo $_SESSION['nome'];?>">>
         <input type="text" name ="telefone" placeholder="Telefone" maxlength= "11" required value = "<?php echo $_SESSION['telefone'];?>">
-        <input type="email" name ="email" placeholder="Email" maxlength= "40" requiredvalue = "<?php echo $_SESSION['email'];?>">
-        <input type="password" name ="senha" placeholder="Senha" maxlength= "32" required value = "<?php echo $_SESSION['senha'];?>">>
+        <input type="email" name ="email" placeholder="Email" maxlength= "40" required value = "<?php echo $_SESSION['email'];?>">
+        <input type="password" name ="senha" placeholder="Senha" maxlength= "32" required>
         <input type="password" name ="confsenha" placeholder="Confirmar Senha" maxlength= "70"required>
         <input type="submit" value="Editar">
     </form>
@@ -55,7 +55,7 @@
                 </div>
                 
                 <?php
-                header('Location: AreaPrivada.php');
+                header('Location: index.php');
             }
             else
             {
